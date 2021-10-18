@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <th:block th:replace = "/layout/head :: head">
+    </th:block>
+</head>
+
+<body>
+<nav>
+
+        <th:block th:replace = "/layout/nav :: nav">
+        </th:block>
+
+</nav>
+
+    <div class="container">
+
+        <div class="left-sidebar">
+            <th:block th:replace = "/layout/left-sidebar :: left-sidebar">
+            </th:block>
+        </div>
+
+        <div class="main-content">
+            <th:block th:replace = "/layout/main-content :: main-content">
+            </th:block>
+        </div>
+
+        <div class="right-sidebar">
+            <th:block th:replace = "/layout/right-sidebar :: right-sidebar">
+            </th:block>
+        </div>
+    </div>
+
+   <div class="script">
+       <th:block th:replace = "layout/script :: script">
+       </th:block>
+   </div>
+</body>
+</html>

@@ -9,4 +9,9 @@ public class HomeController {
     public String getHome() {
         return "index";
     }
+
+    @GetMapping("/profile")
+    public String getProfile() {
+        return "profile";
+    }
 }

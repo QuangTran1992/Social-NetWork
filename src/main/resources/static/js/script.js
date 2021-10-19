@@ -12,17 +12,17 @@ darkMode.onclick = function() {
     darkMode.classList.toggle("active");
     document.body.classList.toggle("dark-theme");
 
-    if(localStorage.getItem("theme") == "light") {
+    if(localStorage.getItem("theme") === "light") {
         localStorage.setItem("theme", "dark");
     } else {
         localStorage.setItem("theme", "light");
     }
 }
 
-if (localStorage.getItem("theme") == "light") {
+if (localStorage.getItem("theme") === "light") {
     darkMode.classList.remove("active");
     document.body.classList.remove("dark-theme");
-} else if (localStorage.getItem("theme") == "dark") {
+} else if (localStorage.getItem("theme") === "dark") {
     darkMode.classList.add("active");
     document.body.classList.add("dark-theme");
 } else {
@@ -30,7 +30,7 @@ if (localStorage.getItem("theme") == "light") {
 }
 
 postContent.oninput = () => {
-    if(postContent.value != "") {
+    if(postContent.value !== "") {
         postBtn.classList.add("active");
     } else {
         postBtn.classList.remove("active");
@@ -73,8 +73,12 @@ $(".post-btn").on("click", (e) => {
     e.preventDefault();
     let content = postContent.value;
 
-    if (content != "") {x
+    if (content !== "") {
         post(content);
     }
    
+});
+
+$(function() {
+    $('.lazy').lazy();
 });

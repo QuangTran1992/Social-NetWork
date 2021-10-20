@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Login</title>
+    <link rel="stylesheet" href="css/style-login.css">
+    <script src="js/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+    <div class="container">
+
+        <div class="main">
+
+            <div class="main-left">
+                <p class="social-logo">SocialBook</p>
+                <p class="social-slogan">SocialBook helps you connect and share with the people in your life</p>
+            </div>
+
+            <div class="main-right">
+                <div class="main-right__login">
+                    <form action="" id="frmLogin">
+                        <div class="login-element login-input">
+                            <input type="email" name="email" placeholder="Email address or phone number">
+                        </div>
+                        <div class="login-element login-input">
+                            <input type="password" name="password" placeholder="Password">
+                        </div>
+
+                    </form>
+
+                    <div class="login-element alert-danger">
+
+                    </div>
+
+                    <div class="login-element login-button">
+                        <button class="login-btn">Log In</button>
+                    </div>
+
+                    <div class="login-element login-link">
+                        <a href="#">Forgotten account?</a>
+                    </div>
+
+                    <div class="login-element login-line">
+
+                    </div>
+
+                    <div class="login-element login-account">
+                        <button id="sign-up-btn">Create New Account</button>
+                    </div>
+                </div>
+
+
+            </div>
+
+        </div>
+
+        <div class="footer">
+            <th:block th:replace="layout/footer :: footer">
+            </th:block>
+        </div>
+
+        <div class="modal">
+            <div class="modal__sign-up">
+                <div class="sign-up-close">
+                    X
+                </div>
+
+                <div class="sign-up-heading">
+                    <p class="heading-name">Sign Up</p>
+                    <p class="heading-child-name">It's quick and easy.</p>
+                </div>
+                <form action="" id="frmSignUp">
+                    <div class="sign-up-element sign-up-name">
+                        <input type="text" name="firstName" placeholder="First name">
+                        <input type="text" name="lastName" placeholder="Last name">
+                    </div>
+                    <div class="sign-up-element sign-up-input">
+                        <input type="email" name="email" placeholder="Email address or phone number">
+                    </div>
+                    <div class="sign-up-element sign-up-input">
+                        <input type="password" name="password" placeholder="Password">
+                    </div>
+                    <div class="sign-up-element sign-up-input">
+                        <input type="password" name="repassword" placeholder="Re-Password">
+                    </div>
+                    <div class="sign-up-date-birth">
+                        <label>Date of birth</label>
+                        <div class="date-birth-alert"><a>&#63;</a></div>
+                    </div>
+                    <div class="sign-up-selection">
+                        <div class="select-choice">
+                            <select name="">
+                                <option value="">1</option>
+                                <option value="">2</option>
+                                <option value="">3</option>
+                                <option value="">4</option>
+                                <option value="">5</option>
+                                <option value="">6</option>
+                                <option value="">7</option>
+                                <option value="">8</option>
+                                <option value="">9</option>
+                                <option value="">10</option>
+                                <option value="">11</option>
+                                <option value="">12</option>
+                                <option value="">13</option>
+                                <option value="">14</option>
+                                <option value="">15</option>
+                                <option value="">16</option>
+                                <option value="">17</option>
+                                <option value="">18</option>
+                                <option value="">19</option>
+                                <option value="">20</option>
+                                <option value="">21</option>
+                                <option value="">22</option>
+                                <option value="">23</option>
+                                <option value="">24</option>
+                                <option value="">25</option>
+                                <option value="">26</option>
+                                <option value="">27</option>
+                                <option value="">28</option>
+                                <option value="">29</option>
+                                <option value="">30</option>
+                                <option value="">31</option>
+                            </select>
+                        </div>
+                        <div class="select-choice">
+                            <select name="">
+                                <option value="">Jan</option>
+                                <option value="">Jeb</option>
+                                <option value="">Mar</option>
+                                <option value="">Apr</option>
+                                <option value="">May</option>
+                                <option value="">Jun</option>
+                                <option value="">Jul</option>
+                                <option value="">Aug</option>
+                                <option value="">Sep</option>
+                                <option value="">Oct</option>
+                                <option value="">Nov</option>
+                                <option value="">Dec</option>
+                            </select>
+                        </div>
+                        <div class="select-choice">
+                            <select name="">
+                                <option value="">2021</option>
+                                <option value="">2020</option>
+                                <option value="">2019</option>
+                                <option value="">2018</option>
+                                <option value="">2017</option>
+                                <option value="">2016</option>
+                                <option value="">2015</option>
+                                <option value="">2014</option>
+                                <option value="">2013</option>
+                                <option value="">2012</option>
+                                <option value="">2011</option>
+                                <option value="">2010</option>
+                                <option value="">2009</option>
+                                <option value="">2008</option>
+                                <option value="">2007</option>
+                                <option value="">2006</option>
+                                <option value="">2005</option>
+                                <option value="">2004</option>
+                                <option value="">2003</option>
+                                <option value="">2002</option>
+                                <option value="">2001</option>
+                                <option value="">2000</option>
+                                <option value="">1999</option>
+                                <option value="">1998</option>
+                                <option value="">1997</option>
+                                <option value="">1996</option>
+                                <option value="">1995</option>
+                                <option value="">1994</option>
+                                <option value="">1993</option>
+                                <option value="">1992</option>
+                                <option value="">1991</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="sign-up-gender">
+                        <label>Gender</label>
+                        <div class="gender-alert"><a>&#63;</a></div>
+                    </div>
+                    <div class="sign-up-gender-choice">
+                        <div class="gender-name">
+                            <label>Female</label>
+                            <input type="radio" name="gender">
+                        </div>
+                        <div class="gender-name">
+                            <label>Male</label>
+                            <input type="radio" name="gender">
+                        </div>
+                    </div>
+                </form>
+
+                <div class="sign-up-terms">
+                    <p>
+                        By clicking Sign Up, you agree to our Terms, Data Policy and Cookie Policy.
+                        You may receive SMS notifications from us and can opt out at any time.
+                    </p>
+                </div>
+                <div class="sign-up-button">
+                    <button class="sign-up-submit">Sign Up</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const loginBtn = $(".login-btn");
+        const frmLogin = $("#frmLogin");
+        const showErrorLogin = $("#frmLogin .alert-danger");
+        const signUpBtn = $("#sign-up-btn");
+
+        const modal = $(".modal");
+        const closeModal = $(".sign-up-close");
+        const signUpSubmit = $(".sign-up-submit");
+        const frmSignUp =  $("#frmSignUp")
+
+        loginBtn.on("click", () => {
+            frmLogin.submit();
+        });
+
+        frmLogin.validate({
+            onkeyup: function (element) {
+                $(element).valid()
+            },
+            onclick: false,
+            onfocusout: false,
+            rules: {
+                email: {
+                    required: true,
+                    minlength: 5,
+                    maxlength: 50
+                },
+                password: {
+                    required: true,
+                    minlength: 5,
+                    maxlength: 50
+                }
+            },
+            message: {
+                email: {
+                    required: "Vui lòng nhập đầy đủ email",
+                    minlength: "Họ tên tối thiểu 5 ký tự",
+                    maxlength: "Họ tên tối đa 50 ký tự"
+                },
+                password: {
+                    required: "Vui lòng nhập đầy đủ password",
+                    minlength: "Họ tên tối thiểu 5 ký tự",
+                    maxlength: "Họ tên tối đa 50 ký tự"
+                }
+            },
+            errorLabelContainer: "#frmLogin .alert-danger",
+            errorPlacement: function (error, element) {
+                error.appendTo("#addEmployeeModal .modal-alert-danger");
+            },
+            showErrors: function (errorMap, errorList) {
+                if (this.numberOfInvalids() > 0) {
+                    showErrorLogin.removeClass("hide").addClass("show");
+                } else {
+                    showErrorLogin.removeClass("show").addClass("hide").empty();
+                    $("#frmLogin input.error").removeClass("error");
+                }
+                this.defaultShowErrors();
+            },
+        });
+
+        signUpSubmit.on("click", () => {
+            frmSignUp.submit();
+        });
+
+        frmSignUp.validate({
+            onkeyup: function (element) {
+                $(element).valid()
+            },
+            onclick: false,
+            onfocusout: false,
+            rules: {
+                firstName: {
+                    required: true,
+                    minlength: 5,
+                    maxlength: 50
+                },
+                lastName: {
+                    required: true,
+                    minlength: 5,
+                    maxlength: 50
+                },
+                email: {
+                    required: true,
+                    minlength: 5,
+                    maxlength: 50
+                },
+                password: {
+                    required: true,
+                    minlength: 5,
+                    maxlength: 50
+                },
+                repassword: {
+                    required: true,
+                    minlength: 5,
+                    maxlength: 50
+                }
+            },
+            message: {
+                firstName: {
+                    required: "Vui lòng nhập đầy đủ tên",
+                    minlength: "Họ tên tối thiểu 5 ký tự",
+                    maxlength: "Họ tên tối đa 50 ký tự"
+                },
+                lastName: {
+                    required: "Vui lòng nhập đầy đủ tên",
+                    minlength: "Họ tên tối thiểu 5 ký tự",
+                    maxlength: "Họ tên tối đa 50 ký tự"
+                },
+                email: {
+                    required: "Vui lòng nhập đầy đủ email",
+                    minlength: "Họ tên tối thiểu 5 ký tự",
+                    maxlength: "Họ tên tối đa 50 ký tự"
+                },
+                password: {
+                    required: "Vui lòng nhập đầy đủ password",
+                    minlength: "Họ tên tối thiểu 5 ký tự",
+                    maxlength: "Họ tên tối đa 50 ký tự"
+                },
+                repassword: {
+                    required: "Vui lòng nhập đầy đủ password",
+                    minlength: "Họ tên tối thiểu 5 ký tự",
+                    maxlength: "Họ tên tối đa 50 ký tự"
+                }
+            },
+            errorLabelContainer: "#frmLogin .alert-danger",
+            errorPlacement: function (error, element) {
+                error.appendTo("#addEmployeeModal .modal-alert-danger");
+            },
+            showErrors: function (errorMap, errorList) {
+                if (this.numberOfInvalids() > 0) {
+                    showErrorLogin.removeClass("hide").addClass("show");
+                } else {
+                    showErrorLogin.removeClass("show").addClass("hide").empty();
+                    $("#frmLogin input.error").removeClass("error");
+                }
+                this.defaultShowErrors();
+            },
+        });
+
+        $(document).ready(() => {
+            signUpBtn.on("click", () => {
+                modal.show()
+            });
+            closeModal.on("click", () => {
+                modal.hide()
+            });
+        });
+    </script>
+</body>
+</html>

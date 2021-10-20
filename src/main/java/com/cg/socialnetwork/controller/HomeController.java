@@ -14,4 +14,9 @@ public class HomeController {
     public String getProfile() {
         return "profile";
     }
+
+    @GetMapping("/login")
+    public String getLogin() {
+        return "login";
+    }
 }

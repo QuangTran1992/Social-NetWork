@@ -66,7 +66,7 @@ public class PostAPI {
         if(!postOptional.isPresent()){
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
         }
-        postService.deleteById(id);
+//        postService.deleteById(id);
         return new ResponseEntity<>(postOptional.get(),HttpStatus.NO_CONTENT);
     }
 

@@ -13,7 +13,7 @@
             </div>
             <div class="main-right">
                 <div class="main-right__login">
-                    <form action="" id="frm-login">
+                    <form method="POST" id="frm-login" th:object="${account}">
                         <div class="login-element login-input">
                             <input type="email" name="email" class="input-email" placeholder="Email address or phone number">
                         </div>
@@ -265,6 +265,10 @@
         loginAccount = () => {
             let email = $("#frmLogin .input-email").val();
             let password = $("#frmLogin .input-pw").val();
+
+            $.ajax({
+
+            });
 
         }
 

@@ -43,29 +43,29 @@ public class ReactionAPI {
         return new ResponseEntity<>(reactionOptional.get(),HttpStatus.OK);
     }
 
-//    @PutMapping("/{id}")
-//    public ResponseEntity<Reaction> updateReaction(@PathVariable long id, @RequestBody Reaction reaction){
-//        Optional<Reaction> reactionOptional = reactionService.findById(id);
-//        if(!reactionOptional.isPresent()){
-//            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
-//        }
-//        reaction.setId(reactionOptional.get().getId());
-//        return new ResponseEntity<>(reactionService.save(reaction),HttpStatus.OK);
-//    }
-//
-//    @PostMapping
-//    public ResponseEntity<Reaction> createPost(@RequestBody Reaction reaction){
-//        return new ResponseEntity<>(reactionService.save(reaction),HttpStatus.CREATED);
-//    }
-//
-//    @DeleteMapping("/{id}")
-//    public ResponseEntity<Reaction> deletePost(@PathVariable long id){
-//        Optional<Reaction> postOptional = reactionService.findById(id);
-//        if(!postOptional.isPresent()){
-//            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
-//        }
+    @PutMapping("/{id}")
+    public ResponseEntity<Reaction> updateReaction(@PathVariable long id, @RequestBody Reaction reaction){
+        Optional<Reaction> reactionOptional = reactionService.findById(id);
+        if(!reactionOptional.isPresent()){
+            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+        }
+        reaction.setId(reactionOptional.get().getId());
+        return new ResponseEntity<>(reactionService.save(reaction),HttpStatus.OK);
+    }
+
+    @PostMapping
+    public ResponseEntity<Reaction> createPost(@RequestBody Reaction reaction){
+        return new ResponseEntity<>(reactionService.save(reaction),HttpStatus.CREATED);
+    }
+
+    @DeleteMapping("/{id}")
+    public ResponseEntity<Reaction> deletePost(@PathVariable long id){
+        Optional<Reaction> postOptional = reactionService.findById(id);
+        if(!postOptional.isPresent()){
+            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+        }
 //        reactionService.deleteById(id);
-//        return new ResponseEntity<>(postOptional.get(),HttpStatus.NO_CONTENT);
-//    }
+        return new ResponseEntity<>(postOptional.get(),HttpStatus.NO_CONTENT);
+    }
 
 }

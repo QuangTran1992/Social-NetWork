@@ -4,6 +4,46 @@ const darkMode = document.querySelector(".dark-btn");
 const postContent = document.querySelector(".post-content");
 const postBtn = document.querySelector(".post-btn");
 
+const page = {
+    urls: {
+        getAllPost: "http://localhost:8080/api/post"
+    },
+    loadData: {},
+    element: {},
+    command: {},
+    dialog: {
+        loadData: {},
+        element: {},
+        command: {}
+    }
+}
+
+class User {
+    constructor(id, firstName, lastName) {
+        this.id = id;
+        this.firstName = firstName;
+        this.lastName = lastName;
+    }
+}
+
+let user = new User();
+
+class Post {
+    constructor(id, createAt, createBy, updateAt, updateBy, user, content, type) {
+        this.id = id;
+        this.createAt = createAt;
+        this.createBy = createBy;
+        this.updateAt = updateAt;
+        this.updateBy = updateBy;
+        this.content = content;
+        this.user = user;
+        this.type = type;
+
+    }
+}
+
+let post = new Post();
+
 showSettings.onclick = function() {
     settings.classList.toggle("active");
 }
@@ -37,21 +77,21 @@ postContent.oninput = () => {
     }
 };
 
-post = (content) => {
-    $(".main-content .post").prepend(`
+post = () => {
+    $(".main-content .new-feed").prepend(`
         <div class="post-container">
              <div class="post-row">
                     <div class="user-profile">
                     <img src="images/profile-pic.png" alt="">
                     <div>
-                        <p>John Nicholson</p>
+                        <p>ABC</p>
                         <span>Jun 24 2021, 13:40</span>
                     </div>
                 </div>
                 <a href="#"><i class="fas fa-ellipsis-h"></i></a>
             </div>
             
-            <p class="post-text">${content}</p>
+            <p class="post-text">${post.content}</p>
             <img src="images/feed-image-1.png" class="post-img">
 
             <div class="post-row">
@@ -68,17 +108,31 @@ post = (content) => {
     `)
 }
 
+page.loadData.newFeed = () => {
+    $.ajax({
+        url: page.urls.getAllPost,
+        method: "GET",
+        success: function (data) {
+            $.each(data, (index, item) => {
+                post = item;
+                // user = post.user;
+                post();
+            });
+        }
+    });
+}
 
 $(".post-btn").on("click", (e) => {
     e.preventDefault();
     let content = postContent.value;
 
     if (content !== "") {
-        post(content);
+        post.content = content;
+        post();
     }
    
 });
 
-$(function() {
-    $('.lazy').lazy();
+$(document).ready(() => {
+    page.loadData.newFeed();
 });

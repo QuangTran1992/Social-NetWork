@@ -23,19 +23,7 @@ public class Like extends BaseEntity {
     @OneToOne
     @JoinColumn(name = "reaction_id", referencedColumnName = "id")
     private Reaction reaction;
-//    @Id
-//    @Column(name = "user_id")
-//    private String userId;
-//
-//    @ManyToOne
-//    @JoinColumn(name = "user_id")
-//    private User user;
 
-//    @OneToOne(mappedBy = "user_id")
-//    private User user;
-
-//    @Id
-//    private String postId;
 
 
 

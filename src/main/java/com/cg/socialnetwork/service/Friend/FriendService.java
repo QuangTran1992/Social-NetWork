@@ -4,9 +4,11 @@ package com.cg.socialnetwork.service.Friend;//package com.cg.service.Friend;
 import com.cg.socialnetwork.model.Friend;
 import com.cg.socialnetwork.repository.FriendRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.util.Optional;
 
+@Service
 public class FriendService implements IFriendService{
 
     @Autowired

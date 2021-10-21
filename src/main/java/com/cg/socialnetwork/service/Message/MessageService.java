@@ -4,9 +4,11 @@ package com.cg.socialnetwork.service.Message;//package com.cg.service.Message;
 import com.cg.socialnetwork.model.Message;
 import com.cg.socialnetwork.repository.MessageRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.util.Optional;
 
+@Service
 public class MessageService implements IMessageService{
 
     @Autowired

@@ -38,7 +38,7 @@ public class UserAPI {
         }
     }
 
-    @GetMapping("/{uId}")
+    @GetMapping("/{id}")
     public ResponseEntity<User> findUserById(@PathVariable long id) {
         Optional<User> user = userService.findById(id);
 //  c1      return user.map(value -> new ResponseEntity<>(value, HttpStatus.OK))
@@ -50,7 +50,7 @@ public class UserAPI {
         }
     }
 
-    @PutMapping("/{uId}")
+    @PutMapping("/{id}")
     public ResponseEntity<User> updateUser(@PathVariable long id, @RequestBody User user){
         Optional<User> userOptional = userService.findById(id);
         if(!userOptional.isPresent()){

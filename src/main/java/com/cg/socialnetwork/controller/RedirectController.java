@@ -6,13 +6,11 @@
 //import org.springframework.web.servlet.ModelAndView;
 //
 //@Controller
-//@RequestMapping("/social")
-//public class SocialController {
-//        @GetMapping
-//        public ModelAndView listCustomers() {
-//            ModelAndView modelAndView = new ModelAndView();
-//            modelAndView.setViewName("/social/index");
-//            return modelAndView;
-//        }
+//@RequestMapping("/")
+//public class RedirectController {
 //
+//    @GetMapping
+//    public ModelAndView redirected(){
+//        return new ModelAndView("redirect:/login");
+//    }
 //}

@@ -1,18 +1,17 @@
 package com.cg.socialnetwork.controller;
 
+import com.cg.socialnetwork.model.User;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
 @Controller
-@RequestMapping("/")
-public class HomeController {
+@RequestMapping("/login")
+public class LoginController {
 
     @GetMapping
-    public ModelAndView redirected(){
-        return new ModelAndView("redirect:/login");
+    public ModelAndView login(){
+        return new ModelAndView("login","user", new User());
     }
 }
-

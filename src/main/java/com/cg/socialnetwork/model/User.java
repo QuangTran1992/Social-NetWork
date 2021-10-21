@@ -7,6 +7,7 @@ import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotBlank;
+import java.util.Date;
 import java.util.List;
 
 @Entity
@@ -30,6 +31,9 @@ public class User extends BaseEntity {
     @NotBlank
     private String lastName;
 
+    @NotBlank
+    private Date dateOfBirth;
+
     @Enumerated(EnumType.STRING)
     private Gender gender;
 
@@ -41,25 +45,14 @@ public class User extends BaseEntity {
 
     private String background;
 
-//    @OneToMany(targetEntity = Post.class,mappedBy = "user",cascade = CascadeType.ALL)
-//    private List<Post> posts;
-//
-//    @OneToMany(targetEntity = Comment.class,mappedBy = "user",cascade = CascadeType.ALL)
-//    private List<Comment> comments;
-//
-//    @OneToMany(targetEntity = Friend.class,mappedBy = "userFriend",cascade = CascadeType.ALL)
-//    private List<Friend> friends;
-//
-//    @OneToMany(targetEntity = Like.class,mappedBy = "user", cascade = CascadeType.ALL)
-//    private List<Like> likes;
-//
-//    @OneToOne(cascade = CascadeType.ALL)
-//    @JoinColumn(name = "user", referencedColumnName = "user")
-//    private Friend friend;
-
-//    private Boolean active;
-//
-//    private Boolean status = true;
+    public User(String email, @NotBlank String password, @NotBlank String firstName, @NotBlank String lastName, @NotBlank Date dateOfBirth, Gender gender) {
+        this.email = email;
+        this.password = password;
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.dateOfBirth = dateOfBirth;
+        this.gender = gender;
+    }
 
     public User(long id, String email, @NotBlank String password, @NotBlank String firstName,
                 @NotBlank String lastName, Gender gender, int city, int country) {
@@ -73,13 +66,5 @@ public class User extends BaseEntity {
         this.country = country;
     }
 
-//    public UserDTO toUserDTO(){
-//        return new UserDTO()
-//                .setUId(uID)
-//                .setFirstName(firstName)
-//                .setLastName(lastName)
-//                .setGender(gender)
-//                .setCity(city)
-//                .setCounty(country);
-//    }
+
 }

@@ -9,9 +9,9 @@ import org.springframework.web.servlet.ModelAndView;
 @RequestMapping("/social")
 public class SocialController {
         @GetMapping
-        public ModelAndView listCustomers() {
+        public ModelAndView getHome() {
             ModelAndView modelAndView = new ModelAndView();
-            modelAndView.setViewName("/social/index");
+            modelAndView.setViewName("/index");
             return modelAndView;
         }
 

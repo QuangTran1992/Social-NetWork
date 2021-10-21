@@ -7,6 +7,8 @@ import com.cg.socialnetwork.service.PostService.IPostService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.validation.BindingResult;
+import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -37,9 +39,9 @@ public class PostAPI {
         Optional<Post> postOptional = postService.findById(id);
         if(!postOptional.isPresent()){
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
-        }else{
-            return new ResponseEntity<>(postOptional.get(),HttpStatus.OK);
         }
+            return new ResponseEntity<>(postOptional.get(),HttpStatus.OK);
+
     }
 
     @PutMapping("/{id}")
@@ -47,11 +49,25 @@ public class PostAPI {
         Optional<Post> postOptional = postService.findById(id);
         if(!postOptional.isPresent()){
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
-        }else {
-            return new ResponseEntity<>(postOptional.get(),HttpStatus.OK);
         }
+            post.setId(postOptional.get().getId());
+            return new ResponseEntity<>(postService.save(post),HttpStatus.OK);
+
     }
 
-//    @PostMapping
+    @PostMapping
+    public ResponseEntity<Post> createPost(@RequestBody Post post){
+        return new ResponseEntity<>(postService.save(post),HttpStatus.CREATED);
+    }
+
+    @DeleteMapping("/{id}")
+    public ResponseEntity<Post> deletePost(@PathVariable long id){
+        Optional<Post> postOptional = postService.findById(id);
+        if(!postOptional.isPresent()){
+            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+        }
+//        postService.deleteById(id);
+        return new ResponseEntity<>(postOptional.get(),HttpStatus.NO_CONTENT);
+    }
 
 }

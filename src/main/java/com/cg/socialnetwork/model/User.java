@@ -53,18 +53,4 @@ public class User extends BaseEntity {
         this.dateOfBirth = dateOfBirth;
         this.gender = gender;
     }
-
-    public User(long id, String email, @NotBlank String password, @NotBlank String firstName,
-                @NotBlank String lastName, Gender gender, int city, int country) {
-        this.id = id;
-        this.email = email;
-        this.password = password;
-        this.firstName = firstName;
-        this.lastName = lastName;
-        this.gender = gender;
-        this.city = city;
-        this.country = country;
-    }
-
-
 }

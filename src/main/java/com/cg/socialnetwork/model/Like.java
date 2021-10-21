@@ -16,6 +16,13 @@ public class Like extends BaseEntity {
 
     @EmbeddedId
     private LikeId id;
+
+    @Column(name = "reaction_id",insertable=false, updatable= false)
+    private long reactionId;
+
+    @OneToOne
+    @JoinColumn(name = "reaction_id", referencedColumnName = "id")
+    private Reaction reaction;
 //    @Id
 //    @Column(name = "user_id")
 //    private String userId;
@@ -30,11 +37,6 @@ public class Like extends BaseEntity {
 //    @Id
 //    private String postId;
 
-    @Column(name = "reaction_id",insertable=false, updatable= false)
-    private long reactionId;
 
-    @OneToOne
-    @JoinColumn(name = "reaction_id", referencedColumnName = "id")
-    private Reaction reaction;
 
 }

@@ -1,52 +1,35 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
-     <th:block th:fragment = "main-content">
-
-        <div class="story-gallery">
-            <div class="story story-1">
-                <img src="images/upload.png" alt="">
-                <p>Post Story</p>
-            </div>
-            <div class="story story-2">
-                <img src="images/member-1.png" alt="">
-                <p>Post Story</p>
-            </div>
-            <div class="story story-3">
-                <img src="images/member-2.png" alt="">
-                <p>Post Story</p>
-            </div>
-            <div class="story story-4">
-                <img src="images/member-3.png" alt="">
-                <p>Post Story</p>
-            </div>
-            <div class="story story-5">
-                <img src="images/member-4.png" alt="">
-                <p>Post Story</p>
-            </div>
-        </div>
-
-         <div class="write-post-container">
-             <div class="user-profile">
-                 <img src="images/profile-pic.png" alt="">
-                 <div>
-                     <p>John Nicholson</p>
-                     <small>Public <i class="fas fa-caret-down"></i></small>
-                 </div>
-             </div>
-             <div class="post-input-container">
-                 <textarea rows="3" placeholder="What's on your mind" class="post-content"></textarea>
-                 <input type="file" class="post-content" alt="">
-                 <div class="add-post-links">
-                     <a href="#"><img src="images/live-video.png" alt=""> Live Video</a>
-                     <a href="#"><img src="images/photo.png" alt=""> Photo/Video</a>
-                     <a href="#"><img src="images/feeling.png" alt=""> Feeling/Activity</a>
-                 </div>
-                 <div class="post-input">
-                     <a href="#" class="post-btn">Post</a>
-                 </div>
-             </div>
-         </div>
-
+    <th:block th:fragment = "new-feed" >
         <div class="new-feed">
+
+            <div class="post-container">
+                <div class="post__header header">
+                    <!-- header left -->
+                    <div class="header__left">
+                        <a href="#">
+                            <img src="./images/author-pic.jpg" class="post__author-pic" />
+                        </a>
+                        <div class="post__author author">
+                            <span class="author__name">
+                                <a href="#">Mark Zuckerberg</a>
+                            </span>
+                            
+                        </div>
+                        <span class="post__date">
+                            <a href="#">October 13, 2020</a>
+                        </span>
+                        <span class="post__date-privacy-separator">&nbsp;·</span>
+
+                    </div>
+                    <!-- Header right -->
+                    <div class="header__right">
+                        <div class="post__options options">
+                            <i class="options__icon"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
             <div class="post-container">
                 <div class="post-row">
                     <div class="user-profile">
@@ -74,7 +57,7 @@
                 </div>
             </div>
 
-            <div class="post-container">
+            <div class="post-container lazy">
                 <div class="post-row">
                     <div class="user-profile">
                         <img src="images/profile-pic.png" alt="">
@@ -101,7 +84,7 @@
                 </div>
             </div>
 
-            <div class="post-container">
+            <div class="post-container lazy">
                 <div class="post-row">
                     <div class="user-profile">
                         <img src="images/profile-pic.png" alt="">
@@ -128,7 +111,7 @@
                 </div>
             </div>
 
-            <div class="post-container">
+            <div class="post-container lazy">
                 <div class="post-row">
                     <div class="user-profile">
                         <img src="images/profile-pic.png" alt="">
@@ -155,7 +138,7 @@
                 </div>
             </div>
 
-            <div class="post-container">
+            <div class="post-container lazy">
                 <div class="post-row">
                     <div class="user-profile">
                         <img src="images/profile-pic.png" alt="">
@@ -182,7 +165,7 @@
                 </div>
             </div>
 
-            <div class="post-container">
+            <div class="post-container lazy">
                 <div class="post-row">
                     <div class="user-profile">
                         <img src="images/profile-pic.png" alt="">
@@ -209,7 +192,7 @@
                 </div>
             </div>
 
-            <div class="post-container">
+            <div class="post-container lazy">
                 <div class="post-row">
                     <div class="user-profile">
                         <img src="images/profile-pic.png" alt="">
@@ -236,7 +219,7 @@
                 </div>
             </div>
 
-            <div class="post-container">
+            <div class="post-container lazy">
                 <div class="post-row">
                     <div class="user-profile">
                         <img src="images/profile-pic.png" alt="">
@@ -263,7 +246,7 @@
                 </div>
             </div>
 
-            <div class="post-container">
+            <div class="post-container lazy">
                 <div class="post-row">
                     <div class="user-profile">
                         <img src="images/profile-pic.png" alt="">
@@ -290,7 +273,7 @@
                 </div>
             </div>
 
-            <div class="post-container">
+            <div class="post-container lazy">
                 <div class="post-row">
                     <div class="user-profile">
                         <img src="images/profile-pic.png" alt="">
@@ -319,5 +302,4 @@
 
             <button type="button" class="load-more-btn">Load More</button>
         </div>
-
-     </th:block>
+    </th:block>

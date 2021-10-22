@@ -1,6 +1,5 @@
 package com.cg.socialnetwork.model.dto;
 
-
 import com.cg.socialnetwork.model.User;
 import com.cg.socialnetwork.model.enumModel.Gender;
 import lombok.AllArgsConstructor;
@@ -23,6 +22,7 @@ public class UserDTO {
     private String dateOfBirth;
     private String email;
     private Gender gender;
+    private Boolean status;
     private int country;
     private int city;
     private String image;

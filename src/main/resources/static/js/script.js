@@ -43,6 +43,7 @@ class Post {
 }
 
 let post = new Post();
+let user = new User()
 
 showSettings.onclick = function() {
     settings.classList.toggle("active");
@@ -84,7 +85,7 @@ post = () => {
                     <div class="user-profile">
                     <img src="images/profile-pic.png" alt="">
                     <div>
-                        <p>ABC</p>
+                        <p>${user.firstName}</p>
                         <span>Jun 24 2021, 13:40</span>
                     </div>
                 </div>
@@ -92,7 +93,7 @@ post = () => {
             </div>
             
             <p class="post-text">${post.content}</p>
-            <img src="images/feed-image-1.png" class="post-img">
+            <img src="https://vcdn1-dulich.vnecdn.net/2021/07/16/1-1626437591.jpg?w=1200&h=0&q=100&dpr=1&fit=crop&s=BWzFqMmUWVFC1OfpPSUqMA" class="post-img">
 
             <div class="post-row">
                 <div class="activity-icons">
@@ -115,7 +116,7 @@ page.loadData.newFeed = () => {
         success: function (data) {
             $.each(data, (index, item) => {
                 post = item;
-                // user = post.user;
+                user = post.user;
                 post();
             });
         }

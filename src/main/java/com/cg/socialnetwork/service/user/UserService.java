@@ -1,7 +1,8 @@
-package com.cg.socialnetwork.service.User;//package com.cg.service.User;
+package com.cg.socialnetwork.service.user;//package com.cg.service.User;
 //
 
 import com.cg.socialnetwork.model.User;
+import com.cg.socialnetwork.model.dto.UserDTO;
 import com.cg.socialnetwork.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -32,5 +33,20 @@ public class UserService implements IUserService{
     @Override
     public void deleteById(long id) {
         userRepository.deleteById(id);
+    }
+
+    @Override
+    public Iterable<UserDTO> findAllUserDTO() {
+        return userRepository.findAllUserDTO();
+    }
+
+    @Override
+    public Optional<User> findByEmailAndPassword(String email, String password) {
+        return userRepository.findByEmailAndPassword(email, password);
+    }
+
+    @Override
+    public Optional<User> findByEmail(String email) {
+        return userRepository.findByEmail(email);
     }
 }

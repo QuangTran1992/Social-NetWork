@@ -1,4 +1,4 @@
-package com.cg.socialnetwork.service.CommentService;//package com.cg.service.CommentService;
+package com.cg.socialnetwork.service.comment;//package com.cg.service.CommentService;
 
 
 import com.cg.socialnetwork.model.Comment;

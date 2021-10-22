@@ -1,4 +1,4 @@
-package com.cg.socialnetwork.service.Friend;//package com.cg.service.Friend;
+package com.cg.socialnetwork.service.friend;//package com.cg.service.Friend;
 
 
 import com.cg.socialnetwork.model.Friend;

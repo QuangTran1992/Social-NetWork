@@ -41,9 +41,28 @@ public class User extends BaseEntity {
 
     private int country;
 
-    private String image;
+    @Column(name = "image_id",insertable=false, updatable= false)
+    private long mediaId;
+
+    @ManyToOne
+    @JoinColumn(name = "image_id",referencedColumnName = "id")
+    private Media media;
 
     private String background;
+
+    private boolean status = true;
+
+    public User(long id, String email, @NotBlank String password, @NotBlank String firstName,
+                @NotBlank String lastName, Gender gender, int city, int country) {
+        this.id = id;
+        this.email = email;
+        this.password = password;
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.gender = gender;
+        this.city = city;
+        this.country = country;
+    }
 
     public User(String email, @NotBlank String password, @NotBlank String firstName, @NotBlank String lastName, @NotBlank Date dateOfBirth, Gender gender) {
         this.email = email;

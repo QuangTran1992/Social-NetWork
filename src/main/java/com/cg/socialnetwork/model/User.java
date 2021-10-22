@@ -48,6 +48,10 @@ public class User extends BaseEntity {
     @JoinColumn(name = "image_id",referencedColumnName = "id")
     private Media media;
 
+    @ManyToOne
+    @JoinColumn(name = "role_id",referencedColumnName = "id")
+    private Role role;
+
     private String background;
 
     private boolean status = true;

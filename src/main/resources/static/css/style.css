@@ -419,6 +419,11 @@ nav {
     justify-content: space-between;
 }
 
+.post-container .post-row:last-child {
+    margin-top: 5px;
+    border-bottom: 1px solid #ccc;
+}
+
 .activity-icons div img {
     width: 18px;
     margin-right: 10px;

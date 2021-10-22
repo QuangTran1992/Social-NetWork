@@ -267,6 +267,10 @@
     margin: 10px;
 }
 
+.modal-alert-danger label {
+    margin: 10px;
+}
+
 .show {
     display: block !important;
 }

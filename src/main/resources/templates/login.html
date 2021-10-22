@@ -374,6 +374,7 @@
             }).done((data) => {
                 alert("success");
                 $("#createAccount").modal("hide");
+                $('#frm-sign-up')[0].reset();
             })
                 .fail((jqXHR) => {
                     let str = '';
@@ -391,6 +392,17 @@
                     $("#createAccount .modal-alert-danger").append(str);
                 });
         }
+
+        $('.sign-up-submit').on("click", function(){
+            $('.modal-alert-danger').removeClass("hide");
+        });
+
+        $('.btn-close').on("click", function(){
+            $('#frm-sign-up')[0].reset();
+            $('.modal-alert-danger').addClass("hide");
+            $('.modal-alert-danger').empty();
+            $('.error').removeClass('error');
+        });
 
     </script>
 </div>

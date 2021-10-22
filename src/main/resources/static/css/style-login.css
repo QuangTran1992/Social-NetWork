@@ -109,6 +109,14 @@
     cursor: pointer;
 }
 
+.login-account button:hover {
+    background-color: #369523;
+}
+
+.login-account button:focus {
+    background-color: #42b72a;
+}
+
 .footer {
     background-color: white;
 }
@@ -265,6 +273,13 @@
 
 .alert-danger label {
     margin: 10px;
+}
+
+.modal-alert-danger {
+    background-color: #ff2020;
+    color: #fff;
+    margin-bottom: 10px;
+    border-radius: 10px;
 }
 
 .modal-alert-danger label {

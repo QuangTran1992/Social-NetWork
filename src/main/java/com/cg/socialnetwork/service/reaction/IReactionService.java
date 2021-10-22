@@ -1,4 +1,4 @@
-package com.cg.socialnetwork.service.ReactionService;//package com.cg.service.ReactionService;
+package com.cg.socialnetwork.service.reaction;//package com.cg.service.ReactionService;
 
 
 import com.cg.socialnetwork.model.Reaction;

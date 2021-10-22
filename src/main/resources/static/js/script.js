@@ -70,6 +70,7 @@ page.command.postStatus = () => {
             <p class="post-text">${post.content}</p>
             <img src="${post.content}" class="post-img">
 
+
             <div class="post-row">
                 <div class="activity-icons">
                     <div><img src="images/like-blue.png" alt=""> 120</div>
@@ -94,6 +95,7 @@ page.loadData.newFeed = () => {
                 post = item;
                 user = post.user;
                 page.command.postStatus();
+
             });
         }
     });

@@ -3,8 +3,7 @@ package com.cg.socialnetwork.controller.api;
 
 import com.cg.socialnetwork.model.Friend;
 
-import com.cg.socialnetwork.model.Post;
-import com.cg.socialnetwork.service.Friend.IFriendService;
+import com.cg.socialnetwork.service.friend.IFriendService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

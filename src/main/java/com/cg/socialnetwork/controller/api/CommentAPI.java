@@ -1,7 +1,7 @@
 package com.cg.socialnetwork.controller.api;
 
 import com.cg.socialnetwork.model.Comment;
-import com.cg.socialnetwork.service.CommentService.ICommentService;
+import com.cg.socialnetwork.service.comment.ICommentService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

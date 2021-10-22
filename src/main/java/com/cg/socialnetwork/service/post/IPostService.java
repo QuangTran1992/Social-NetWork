@@ -1,4 +1,4 @@
-package com.cg.socialnetwork.service.PostService;//package com.cg.service.PostService;
+package com.cg.socialnetwork.service.post;//package com.cg.service.PostService;
 
 
 import com.cg.socialnetwork.model.Post;

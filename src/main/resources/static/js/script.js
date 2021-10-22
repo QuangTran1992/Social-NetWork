@@ -4,9 +4,11 @@ const darkMode = document.querySelector(".dark-btn");
 const postContent = document.querySelector(".post-content");
 const postBtn = document.querySelector(".post-btn");
 
-const page = {
+let user = new User();
+let post = new Post();
+let page = {
     urls: {
-        getAllPost: "http://localhost:8080/api/post"
+        getAllPost: location.origin + "/api/post"
     },
     loadData: {},
     element: {},
@@ -17,33 +19,6 @@ const page = {
         command: {}
     }
 }
-
-class User {
-    constructor(id, firstName, lastName) {
-        this.id = id;
-        this.firstName = firstName;
-        this.lastName = lastName;
-    }
-}
-
-let user = new User();
-
-class Post {
-    constructor(id, createAt, createBy, updateAt, updateBy, user, content, type) {
-        this.id = id;
-        this.createAt = createAt;
-        this.createBy = createBy;
-        this.updateAt = updateAt;
-        this.updateBy = updateBy;
-        this.content = content;
-        this.user = user;
-        this.type = type;
-
-    }
-}
-
-let post = new Post();
-let user = new User()
 
 showSettings.onclick = function() {
     settings.classList.toggle("active");
@@ -78,22 +53,23 @@ postContent.oninput = () => {
     }
 };
 
-post = () => {
+page.command.postStatus = () => {
     $(".main-content .new-feed").prepend(`
         <div class="post-container">
              <div class="post-row">
                     <div class="user-profile">
                     <img src="images/profile-pic.png" alt="">
                     <div>
-                        <p>${user.firstName}</p>
-                        <span>Jun 24 2021, 13:40</span>
+                        <p>${user.firstName} ${user.lastName}</p>
+                        <span>${post.createdAt}</span>
                     </div>
                 </div>
                 <a href="#"><i class="fas fa-ellipsis-h"></i></a>
             </div>
             
             <p class="post-text">${post.content}</p>
-            <img src="https://vcdn1-dulich.vnecdn.net/2021/07/16/1-1626437591.jpg?w=1200&h=0&q=100&dpr=1&fit=crop&s=BWzFqMmUWVFC1OfpPSUqMA" class="post-img">
+            <img src="${post.content}" class="post-img">
+
 
             <div class="post-row">
                 <div class="activity-icons">
@@ -114,10 +90,12 @@ page.loadData.newFeed = () => {
         url: page.urls.getAllPost,
         method: "GET",
         success: function (data) {
+            console.log(data)
             $.each(data, (index, item) => {
                 post = item;
                 user = post.user;
-                post();
+                page.command.postStatus();
+
             });
         }
     });
@@ -129,10 +107,12 @@ $(".post-btn").on("click", (e) => {
 
     if (content !== "") {
         post.content = content;
-        post();
+        page.command.postStatus();
     }
    
 });
+
+
 
 $(document).ready(() => {
     page.loadData.newFeed();

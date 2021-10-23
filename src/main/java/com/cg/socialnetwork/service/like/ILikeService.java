@@ -1,4 +1,4 @@
-package com.cg.socialnetwork.service.LikeService;//package com.cg.service.LikeService;
+package com.cg.socialnetwork.service.like;//package com.cg.service.LikeService;
 
 
 import com.cg.socialnetwork.model.Like;

@@ -1,7 +1,7 @@
 package com.cg.socialnetwork.controller.api;
 
 import com.cg.socialnetwork.model.Like;
-import com.cg.socialnetwork.service.LikeService.ILikeService;
+import com.cg.socialnetwork.service.like.ILikeService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -25,7 +25,7 @@ public class LikeAPI {
             if (((List) likes).isEmpty()){
                 return new ResponseEntity<>(HttpStatus.NO_CONTENT);
             }
-            return  new ResponseEntity<>(HttpStatus.OK);
+            return  new ResponseEntity<>(likes,HttpStatus.OK);
         }catch (Exception e) {
             return  new ResponseEntity<>(HttpStatus.BAD_REQUEST);
         }

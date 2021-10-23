@@ -4,6 +4,22 @@ const darkMode = document.querySelector(".dark-btn");
 const postContent = document.querySelector(".post-content");
 const postBtn = document.querySelector(".post-btn");
 
+let user = new User();
+let post = new Post();
+let page = {
+    urls: {
+        getAllPost: location.origin + "/api/post"
+    },
+    loadData: {},
+    element: {},
+    command: {},
+    dialog: {
+        loadData: {},
+        element: {},
+        command: {}
+    }
+}
+
 showSettings.onclick = function() {
     settings.classList.toggle("active");
 }
@@ -37,22 +53,23 @@ postContent.oninput = () => {
     }
 };
 
-post = (content) => {
-    $(".main-content .post").prepend(`
+page.command.postStatus = () => {
+    $(".main-content .new-feed").prepend(`
         <div class="post-container">
              <div class="post-row">
                     <div class="user-profile">
                     <img src="images/profile-pic.png" alt="">
                     <div>
-                        <p>John Nicholson</p>
-                        <span>Jun 24 2021, 13:40</span>
+                        <p>${user.firstName} ${user.lastName}</p>
+                        <span>${post.createdAt}</span>
                     </div>
                 </div>
                 <a href="#"><i class="fas fa-ellipsis-h"></i></a>
             </div>
             
-            <p class="post-text">${content}</p>
-            <img src="images/feed-image-1.png" class="post-img">
+            <p class="post-text">${post.content}</p>
+            <img src="${post.content}" class="post-img">
+
 
             <div class="post-row">
                 <div class="activity-icons">
@@ -68,17 +85,35 @@ post = (content) => {
     `)
 }
 
+page.loadData.newFeed = () => {
+    $.ajax({
+        url: page.urls.getAllPost,
+        method: "GET",
+        success: function (data) {
+            console.log(data)
+            $.each(data, (index, item) => {
+                post = item;
+                user = post.user;
+                page.command.postStatus();
+
+            });
+        }
+    });
+}
 
 $(".post-btn").on("click", (e) => {
     e.preventDefault();
     let content = postContent.value;
 
     if (content !== "") {
-        post(content);
+        post.content = content;
+        page.command.postStatus();
     }
    
 });
 
-$(function() {
-    $('.lazy').lazy();
+
+
+$(document).ready(() => {
+    page.loadData.newFeed();
 });

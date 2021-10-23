@@ -3,8 +3,12 @@ package com.cg.socialnetwork.controller.api;
 
 import com.cg.socialnetwork.model.Friend;
 
+<<<<<<< HEAD
 import com.cg.socialnetwork.model.Post;
 import com.cg.socialnetwork.service.Friend.IFriendService;
+=======
+import com.cg.socialnetwork.service.friend.IFriendService;
+>>>>>>> 6d33d057135405843ee6896e739aac7ac9279ef6
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -71,4 +75,8 @@ public class FriendAPI {
         return new ResponseEntity<>(friendOptional.get(),HttpStatus.NO_CONTENT);
     }
 
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> 6d33d057135405843ee6896e739aac7ac9279ef6

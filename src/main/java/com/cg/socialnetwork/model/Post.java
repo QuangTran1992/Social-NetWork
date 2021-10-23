@@ -23,22 +23,14 @@ public class Post extends BaseEntity {
     @JoinColumn(name = "user_id", referencedColumnName = "id")
     private User user;
 
-//    @OneToMany(targetEntity = Comment.class,mappedBy = "post",cascade = CascadeType.ALL)
-//    private List<Comment> comments;
-
     private String content;
 
-    @Enumerated(EnumType.STRING)
-    private Type type;
+    @ManyToOne
+    @JoinColumn(name = "media_id",referencedColumnName = "id")
+    private Media media;
 
-//    @Column(nullable = false)
-//    private String post_Url;
+//    @Enumerated(EnumType.STRING)
+//    private Type type;
 
-//    private Date date_Created;
-//
-//    private Date date_Updated;
-//
-//    public  String getUpdate(Date date) {
-//        return  new SimpleDateFormat("yyyy:MM:dd HH:mm").format(date);
-//    }
+
 }

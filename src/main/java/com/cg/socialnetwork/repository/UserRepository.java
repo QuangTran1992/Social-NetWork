@@ -13,7 +13,7 @@ import java.util.Optional;
 public interface UserRepository extends JpaRepository<User, Long> {
 
     @Query("select new com.cg.socialnetwork.model.dto.UserDTO " +
-            "(c.id, c.firstName, c.lastName, c.password, c.email, c.country, c.city, c.media.name, c.background) " +
+            "(c.id, c.firstName, c.lastName, c.password, c.email, c.country, c.city, c.media.title, c.background) " +
             "from User c")
     Iterable<UserDTO> findAllUserDTO();
 

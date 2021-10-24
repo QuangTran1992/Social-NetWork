@@ -29,8 +29,4 @@ public class Post extends BaseEntity {
     @JoinColumn(name = "media_id",referencedColumnName = "id")
     private Media media;
 
-//    @Enumerated(EnumType.STRING)
-//    private Type type;
-
-
 }

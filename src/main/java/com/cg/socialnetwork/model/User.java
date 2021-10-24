@@ -54,7 +54,7 @@ public class User extends BaseEntity {
 
     private String background;
 
-    private boolean status = true;
+    private Boolean status = true;
 
     public User(long id, String email, @NotBlank String password, @NotBlank String firstName,
                 @NotBlank String lastName, Gender gender, int city, int country) {

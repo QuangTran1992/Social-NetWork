@@ -21,7 +21,7 @@ public class Media {
     private long id;
 
     @Column(nullable = false)
-    private String name;
+    private String title;
 
     private MediaType type;
 }
